@@ -1,32 +1,34 @@
 import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Trash2, Plus, CreditCard } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Trash2, Info } from 'lucide-react';
 
-export const WalletCardItem = ({ card, onRemove }) => (
+export const WalletCard = ({ card, onSelect, onDelete }) => (
   <motion.div
     layout
     initial={{ opacity: 0, scale: 0.9 }}
     animate={{ opacity: 1, scale: 1 }}
     exit={{ opacity: 0, x: -100 }}
-    className={`relative overflow-hidden p-5 rounded-[2rem] text-white shadow-lg h-44 flex flex-col justify-between ${card.color}`}
+    onClick={() => onSelect(card)}
+    className={`relative p-7 rounded-[2.5rem] h-48 flex flex-col justify-between shadow-2xl cursor-pointer transform active:scale-95 transition-all ${card.color}`}
   >
-    <div className="flex justify-between items-start z-10">
-      <div>
-        <p className="text-[10px] uppercase tracking-widest opacity-80">{card.bank}</p>
-        <h3 className="text-lg font-bold">{card.name}</h3>
+    <div className="flex justify-between items-start">
+      <div className="bg-white/15 px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest">
+        {card.bank}
       </div>
       <button 
-        onClick={() => onRemove(card.id)}
-        className="p-2 bg-white/10 hover:bg-rose-500/40 rounded-full transition-colors backdrop-blur-md"
+        onClick={(e) => {
+          e.stopPropagation();
+          onDelete(card.id);
+        }} 
+        className="p-2.5 bg-black/10 hover:bg-rose-500 rounded-2xl transition-colors"
       >
         <Trash2 size={18} />
       </button>
     </div>
-    
-    <div className="z-10">
-      <div className="flex justify-between items-center mt-2">
-        <p className="text-[10px] opacity-80 uppercase">Exp: 12/28</p>
-        <CreditCard size={24} className="opacity-50" />
+    <div className="mt-auto">
+      <h3 className="text-2xl font-black mb-1">{card.name}</h3>
+      <div className="flex items-center gap-2 text-[10px] opacity-70">
+        <Info size={12} /> Detalles y beneficios
       </div>
     </div>
   </motion.div>

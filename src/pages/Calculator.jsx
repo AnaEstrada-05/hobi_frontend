@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-// Cambiamos GasStation por Fuel
-import { Utensils, Fuel, ShoppingCart, Calculator as CalcIcon, RefreshCcw } from 'lucide-react';
+import { Utensils, Fuel, ShoppingCart, Calculator as CalcIcon, RefreshCcw, ArrowLeft } from 'lucide-react';
 import { CategoryInput } from '../components/CategoryInput';
 import { ResultCard } from '../components/ResultCard';
 
@@ -11,7 +10,7 @@ const CARD_BENEFITS_DB = [
   { id: 3, name: "Amex Gold Elite", annualFee: 3500, cashbackRates: { restaurantes: 0.03, gasolina: 0.02, super: 0.05 }, color: "bg-amber-600" }
 ];
 
-export default function Calculator() {
+export default function Calculator({ onBack }) {
   const [expenses, setExpenses] = useState({ restaurantes: '', gasolina: '', super: '' });
 
   const calculateCashback = (card) => {
@@ -22,19 +21,41 @@ export default function Calculator() {
   };
 
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="min-h-screen bg-gray-50 pb-40">
-      <div className="bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0ea5e9] pt-16 pb-24 px-6 rounded-b-[3.5rem] shadow-xl">
-        <div className="max-w-xl mx-auto text-white">
+    <motion.div 
+      initial={{ opacity: 0 }} 
+      animate={{ opacity: 1 }} 
+      exit={{ opacity: 0 }} 
+      className="min-h-screen bg-gray-50 pb-40"
+    >
+      <motion.div 
+        layoutId="blue-surface"
+        className="bg-gradient-to-br from-[#1e3a8a] via-[#2563eb] to-[#0ea5e9] pt-16 pb-30 px-6 shadow-xl"
+        style={{ borderRadius: "0px 0px 3.5rem 3.5rem" }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+          className="max-w-xl text-white"
+        >
           <div className="flex items-center gap-3 mb-4">
+            <motion.button 
+              whileTap={{ scale: 0.9 }}
+              onClick={onBack}
+              className="p-2 hover:bg-white/10 rounded-full"
+            >
+              <ArrowLeft size={24} />
+            </motion.button>
             <div className="p-3 bg-white/10 backdrop-blur-xl rounded-2xl border border-white/10">
               <CalcIcon size={24} />
             </div>
             <h1 className="text-3xl font-black tracking-tighter">Calculadora</h1>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <div className="max-w-xl mx-auto px-6 -mt-12 space-y-4">
+      <div className="max-w-xl mx-auto px-6 -mt-20 space-y-4 z-10 relative">
         <CategoryInput 
           label="Restaurantes" 
           icon={Utensils} 
@@ -43,7 +64,7 @@ export default function Calculator() {
         />
         <CategoryInput 
           label="Gasolina" 
-          icon={Fuel} // Cambiado aquí
+          icon={Fuel} 
           value={expenses.gasolina} 
           onChange={(v)=>setExpenses({...expenses, gasolina:v})} 
         />
