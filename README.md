@@ -1,16 +1,45 @@
-# React + Vite
+# 💳 Hobi Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-Currently, two official plugins are available:
+**Hobi** es una plataforma inteligente que maximiza tus beneficios financieros recomendando la mejor tarjeta de crédito según tu ubicación y categoría de gasto en tiempo real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Funcionalidades Clave
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **📍 Alertas de Proximidad:** Sistema de radar que detecta comercios cercanos con cashback disponible.
+* **🧮 Calculadora Express:** Compara tus tarjetas instantáneamente para saber cuál usar en cenas, gasolineras o supermercados.
+* **🧠 Feedback Comunitario:** Sistema de aprendizaje donde el usuario reporta si el cashback fue efectivo para actualizar categorías.
+* **🛡️ Wallet Inteligente:** Gestión visual de plásticos con diseño moderno y minimalista.
+* **✨ Transiciones Smooth:** Navegación fluida basada en estados compartidos y físicas de resorte.
 
-## Expanding the ESLint configuration
+## 🛠️ Stack Tecnológico
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Core:** React 18 + Vite
+- **Estilos:** Tailwind CSS
+- **Animaciones:** Framer Motion
+- **Iconos:** Lucide React
+
+## 📦 Instalación
+
+1. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+2. Inicia el servidor de desarrollo:
+   ```bash
+   npm install
+   ```
+
+## 📸 Preview de la Estructura
+src/
+ ├── components/       # Componentes
+ ├── pages/            # Vistas principales (Home, Wallet, Calculator, Alerts, Profile)
+ ├── assets/           # Imágenes y recursos estáticos
+ └── App.jsx           # Orquestador de navegación y transiciones
+
+ 
+Desarrollado por Ana Estrada
