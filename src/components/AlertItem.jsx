@@ -41,7 +41,6 @@ export const AlertItem = ({ brand, location, category, card, cashback, time, ini
         </div>
       </div>
 
-      {/* SISTEMA DE APRENDIZAJE (FEEDBACK) */}
       <div className="pt-3 border-t border-slate-50">
         <AnimatePresence mode="wait">
           {feedback === null ? (

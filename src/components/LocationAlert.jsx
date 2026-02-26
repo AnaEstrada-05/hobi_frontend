@@ -22,7 +22,6 @@ export const LocationAlert = ({
 
         <div className="flex flex-col gap-5 relative z-10">
           
-          {/* Header de la Alerta */}
           <div className="flex items-center gap-3 sm:gap-4">
             <div className="bg-white/20 backdrop-blur-md p-2.5 sm:p-3 rounded-xl sm:rounded-2xl border border-white/30 shadow-inner shrink-0">
               <Zap size={20} className="text-white fill-white sm:w-[22px] sm:h-[22px]" />
@@ -38,11 +37,9 @@ export const LocationAlert = ({
             </div>
           </div>
 
-          {/* Nueva forma de ver el Location: Estilo "Floating Card" */}
           <div className="relative group/loc">
             <div className="absolute inset-0 bg-black/10 blur-md rounded-xl group-hover/loc:bg-black/20 transition-colors" />
             <div className="relative flex items-center gap-3 px-4 py-3 bg-white/10 backdrop-blur-lg rounded-xl border border-white/20 shadow-sm overflow-hidden">
-              {/* Indicador visual de distancia/pulso */}
               <div className="relative flex items-center justify-center">
                 <Navigation size={14} className="text-white rotate-45" />
                 <span className="absolute inset-0 animate-ping bg-white/40 rounded-full scale-150" />
@@ -57,7 +54,6 @@ export const LocationAlert = ({
                 </span>
               </div>
               
-              {/* Decoración lateral */}
               <div className="ml-auto h-8 w-[1px] bg-white/10" />
               <div className="pl-2">
                 <MapPin size={16} className="text-white/60" />
@@ -65,17 +61,14 @@ export const LocationAlert = ({
             </div>
           </div>
 
-          {/* Botón de Acción */}
-          <motion.button 
+          <motion.div 
             whileHover={{ scale: 1.01, backgroundColor: '#52ea90' }}
-            whileTap={{ scale: 0.97 }}
             className="w-full bg-[#4ade80] text-[#1e4d3a] font-black py-4 px-4 sm:px-6 rounded-xl sm:rounded-2xl flex items-center justify-center gap-2 shadow-lg shadow-green-900/10 transition-colors"
           >
             <span className="text-[12px] sm:text-[14px] uppercase tracking-wider">
               {offer}
             </span>
-            <ChevronRight size={16} className="sm:w-[18px]" strokeWidth={3} />
-          </motion.button>
+          </motion.div>
           
         </div>
       </div>
