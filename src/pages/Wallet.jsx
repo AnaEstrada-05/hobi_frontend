@@ -112,7 +112,6 @@ const Wallet = ({ onBack }) => {
         </div>
       </motion.div>
 
-      {/* Modal: Seleccionar Tarjeta del Catálogo */}
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[110] flex items-center justify-center p-6">
@@ -162,7 +161,6 @@ const Wallet = ({ onBack }) => {
         )}
       </AnimatePresence>
 
-      {/* Modal de Detalles (SelectedCard) */}
       <AnimatePresence>
         {selectedCard && (
           <div className="fixed inset-0 z-[120] flex items-end sm:items-center justify-center p-0 sm:p-6">
